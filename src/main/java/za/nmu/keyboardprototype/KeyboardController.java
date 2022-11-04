@@ -20,6 +20,8 @@ import java.util.ResourceBundle;
 public class KeyboardController implements Initializable
 {
     @FXML
+    protected Button tab;
+    @FXML
     protected Button qButton;
     @FXML
     protected Button wButton;
@@ -51,10 +53,12 @@ public class KeyboardController implements Initializable
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         defaultBackground = new Background(new BackgroundFill(Paint.valueOf("silver"), new CornerRadii(5.0), Insets.EMPTY));
-        background = new Background(new BackgroundFill(Paint.valueOf("blue"), new CornerRadii(5.0), Insets.EMPTY));
+        background = new Background(new BackgroundFill(Paint.valueOf("lightblue"), new CornerRadii(5.0), Insets.EMPTY));
 
         textEntered = new SimpleStringProperty("");
         text.textProperty().bind(textEntered);
+
+        tab.setBackground(defaultBackground);
 
         qButton.setBackground(defaultBackground);
         wButton.setBackground(defaultBackground);
@@ -85,10 +89,11 @@ public class KeyboardController implements Initializable
             case P -> pButton.setBackground(background);
         }
 
+        if(keyEvent.getCode() == KeyCode.TAB)
+            return;
         if(keyEvent.isShiftDown())
         {
-            KeyCode shift = KeyCode.SHIFT;
-            if(keyEvent.getCode() != shift)
+            if(keyEvent.getCode() != KeyCode.SHIFT)
                 textEntered.setValue(textEntered.getValue() + keyEvent.getCode().toString().toUpperCase());
         }
         else

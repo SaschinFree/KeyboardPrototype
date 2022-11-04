@@ -40,6 +40,7 @@
           <Button fx:id="iButton" onKeyPressed="#onButtonClick" onKeyReleased="#onButtonRelease" prefHeight="48.0" prefWidth="48.0" text="I" GridPane.columnIndex="8" GridPane.rowIndex="1" />
           <Button fx:id="oButton" onKeyPressed="#onButtonClick" onKeyReleased="#onButtonRelease" prefHeight="48.0" prefWidth="48.0" text="O" GridPane.columnIndex="9" GridPane.rowIndex="1" />
           <Button fx:id="pButton" onKeyPressed="#onButtonClick" onKeyReleased="#onButtonRelease" prefHeight="48.0" prefWidth="48.0" text="P" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+         <Button fx:id="tab" alignment="TOP_LEFT" disable="true" mnemonicParsing="false" prefHeight="48.0" prefWidth="101.0" text="Tab" GridPane.rowIndex="1" />
       </children>
    </GridPane>
    <Label fx:id="text" />
